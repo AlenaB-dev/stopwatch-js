@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.numbers {
+  width: 10px;
+  font-family: digital, arial, verdana;
+  font-size: 50 px;
+}
+
+@font-face {
+  font-family: "digital";
+  src: url("fonts/DS-DIGIB.woff");
+}
