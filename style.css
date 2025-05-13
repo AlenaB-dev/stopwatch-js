@@ -13,3 +13,18 @@
   font-family: "digital";
   src: url("fonts/DS-DIGIB.woff");
 }
+
+.box {
+  width: 40px;
+  height: 40px;
+  border: 1 px solid #000;
+  font-size: 50px;
+  overflow: hidden;
+}
+
+.number {
+  width: 40px;
+  line-height: 40px;
+  font-family: digital, arial, verdana;
+  text-align: center;
+}
