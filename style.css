@@ -3,6 +3,42 @@
   padding: 0;
 }
 
-.numbers {
-  width: 10px;
+.container {
+  padding: 200px;
+  text-align: center;
+}
+
+.stopwatch {
+  padding: 10px;
+  background: linear-gradient(top, #222, #444);
+  overflow: hidden;
+  display: inline-block;
+  border: 7px, solid #eeeeee;
+  border-radius: 20px;
+}
+
+@font-face {
+  font-family: "digital";
+  src: url("fonts/DS-DIGIB.woff");
+}
+
+.box {
+  width: 40px;
+  height: 40px;
+  border: 1 px solid #000;
+  font-size: 50px;
+  overflow: hidden;
+  position: relative;
+  float: left;
+}
+
+.number {
+  width: 40px;
+  line-height: 40px;
+  font-family: digital, arial, verdana;
+  text-align: center;
+  color: #148962;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
