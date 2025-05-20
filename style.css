@@ -1,11 +1,26 @@
-* {
+html,
+body {
+  height: 100%;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .container {
-  padding: 200px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100hv;
+}
+
+.content {
+  padding: 50px;
+  flex: 1;
   text-align: center;
+}
+.header {
+  padding: 50px;
+  text-align: center;
+  background-color: #c5bebe;
 }
 
 .h1 {
@@ -50,7 +65,41 @@
   left: 0;
 }
 
-#button {
+#button-start {
+  background-color: #148962;
+  color: #eeeeee;
+  border: 1px solid #eeeeee;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 18px 10px;
+  width: 180px;
+  margin: 10px;
+  outline: none;
+  &:hover {
+    background: #03492399;
+    border: 1px solid #6b6868;
+    color: #eeeeee;
+  }
+}
+
+#button-stop {
+  background-color: #148962;
+  color: #eeeeee;
+  border: 1px solid #eeeeee;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 18px 10px;
+  width: 180px;
+  margin: 10px;
+  outline: none;
+  &:hover {
+    background: #03492399;
+    border: 1px solid #6b6868;
+    color: #eeeeee;
+  }
+}
+
+#button-reset {
   background-color: #148962;
   color: #eeeeee;
   border: 1px solid #eeeeee;
@@ -68,9 +117,8 @@
 }
 
 .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50px;
+  background-color: #c5bebe;
+  color: #148962;
+  text-align: center;
+  padding: 15px;
 }
