@@ -55,6 +55,7 @@ body {
 }
 
 .number {
+  display: block;
   width: 40px;
   line-height: 40px;
   font-family: digital, arial, verdana;
@@ -63,6 +64,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  transition: transform 0.3s ease-in-out;
 }
 
 #button-start {
