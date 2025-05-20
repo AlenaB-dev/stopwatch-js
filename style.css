@@ -1,11 +1,19 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  padding: 100px;
+  flex: 1;
+  text-align: center;
 }
 
 .container {
-  padding: 200px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100hv;
 }
 
 .h1 {
@@ -68,9 +76,8 @@
 }
 
 .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50px;
+  background-color: #c5bebe;
+  color: #148962;
+  text-align: center;
+  padding: 15px;
 }
