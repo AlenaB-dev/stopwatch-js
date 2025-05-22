@@ -3,7 +3,9 @@ const interval = 10;
 
 const onesPlaceMilisec = document.querySelector(".onesPlaceMiliSeconds");
 const tensPlaceMilisec = document.querySelector(".tensPlaceMiliSeconds");
-const hundredsPlaceMilisec = document.querySelector(".hundredsPlaceMiliseonds");
+const hundredsPlaceMilisec = document.querySelector(
+  ".hundredsPlaceMiliseconds"
+);
 const onesPlaceSec = document.querySelector(".onesPlaceSeconds");
 const tensPlaceSec = document.querySelector(".tensPlaceSeconds");
 const onesPlaceMin = document.querySelector(".onesPlaceMinutes");
