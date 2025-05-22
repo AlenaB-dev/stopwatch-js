@@ -3,7 +3,7 @@ const interval = 10;
 
 const onesPlaceMilisec = document.querySelector(".onesPlaceMiliSeconds");
 const tensPlaceMilisec = document.querySelector(".tensPlaceMiliSeconds");
-const hundredsPlaceMilisec = document.querySelector(".hundresPlaceMiliseonds");
+const hundredsPlaceMilisec = document.querySelector(".hundredsPlaceMiliseonds");
 const onesPlaceSec = document.querySelector(".onesPlaceSeconds");
 const tensPlaceSec = document.querySelector(".tensPlaceSeconds");
 const onesPlaceMin = document.querySelector(".onesPlaceMinutes");
@@ -38,7 +38,7 @@ function startStopwatch() {
     tensPlaceSec.style.transfrom = `translateY(-${secTens * 40}px)`;
     onesPlaceMin.style.transform = `translateY(-${minOnes * 40}px)`;
     tensPlaceMin.style.transform = `translateY(-${minTens * 40}px)`;
-    onesPlaceHours.style.transform = `translateY(-${hoursOnes * 40}px)`;
+    onesPlaceHours.style.transform = `translateY(-${hourOnes * 40}px)`;
     tensPlaceHours.style.transform = `translateY(-${hourTens * 40}px)`;
   }, interval);
 }
@@ -54,9 +54,9 @@ function resetStopwatch() {
   tensPlaceMilisec.style.transform = `translateY(0px)`;
   hundredsPlaceMilisec.style.transform = `translateY(0px)`;
   onesPlaceSec.style.transform = `translateY(0px)`;
-  tensPlaceSec.style.transfrom = `translateY(0px)`;
-  onesPlaceMin.style.transform = `translteY(0px)`;
-  tensPlaceMin.style.transform = `translateY(opx)`;
+  tensPlaceSec.style.transform = `translateY(0px)`;
+  onesPlaceMin.style.transform = `translateY(0px)`;
+  tensPlaceMin.style.transform = `translateY(0px)`;
   onesPlaceHours.style.transform = `translateY(0px)`;
   tensPlaceHours.style.transform = `translateY(0px)`;
 }
