@@ -30,14 +30,14 @@ function startStopwatch() {
     let minTens = Math.floor(minutes / 10);
     let minOnes = minutes % 10;
     let hours = Math.floor(miliseconds / 1000 / 60 / 60);
-    let hourTens = Math.floor(hours / 100);
+    let hourTens = Math.floor(hours / 10);
     let hourOnes = hours % 10;
 
     onesPlaceMilisec.style.transform = `translateY(-${ones * 40}px)`;
     tensPlaceMilisec.style.transform = `translateY(-${tens * 40}px)`;
     hundredsPlaceMilisec.style.transform = `translateY(-${hundreds * 40}px)`;
     onesPlaceSec.style.transform = `translateY(-${secOnes * 40}px)`;
-    tensPlaceSec.style.transfrom = `translateY(-${secTens * 40}px)`;
+    tensPlaceSec.style.transform = `translateY(-${secTens * 40}px)`;
     onesPlaceMin.style.transform = `translateY(-${minOnes * 40}px)`;
     tensPlaceMin.style.transform = `translateY(-${minTens * 40}px)`;
     onesPlaceHours.style.transform = `translateY(-${hourOnes * 40}px)`;
