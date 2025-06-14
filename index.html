@@ -8,61 +8,17 @@
   </head>
   <body>
     <div class="container">
-      <header class="header"><h1>Stopwatch</h1></header>
-      <main class="content">
-        <div class="stopwatch">
-          <div class="box">
-            <div class="number onesPlaceHours">0 1 2 3 4 5 6 7 8 9</div>
-          </div>
-          <div class="box">
-            <div class="number tensPlaceHours">0 1 2 3 4 5 6 7 8 9</div>
-          </div>
-          <div class="box divider">
-            <div class="number">:</div>
-          </div>
+      <h1>Stopwatch</h1>
 
-          <div class="box">
-            <div class="number onesPlaceMinutes">0 1 2 3 4 5 6</div>
-          </div>
-          <div class="box">
-            <div class="number tensPlaceMinutes">0 1 2 3 4 5 6 7 8 9</div>
-          </div>
-          <div class="box divider">
-            <div class="number">:</div>
-          </div>
+      <div id="display" class="display">00:00:00.000</div>
 
-          <div class="box">
-            <div class="number onesPlaceSeconds">0 1 2 3 4 5 6</div>
-          </div>
-          <div class="box">
-            <div class="number tensPlaceSeconds">0 1 2 3 4 5 6 7 8 9</div>
-          </div>
-          <div class="box divider">
-            <div class="number">:</div>
-          </div>
-
-          <div class="box">
-            <div class="number onesPlaceMiliSeconds">0 1 2 3 4 5 6 7 8 9</div>
-          </div>
-          <div class="box">
-            <div class="number tensPlaceMiliSeconds">0 1 2 3 4 5 6 7 8 9</div>
-          </div>
-          <div class="box">
-            <div class="number hundredsPlaceMiliseconds">
-              0 1 2 3 4 5 6 7 8 9
-            </div>
-          </div>
-        </div>
-        <div class="buttons">
-          <button id="button-start">Start</button>
-          <button id="button-stop">Stop</button>
-          <button id="button-reset">Reset</button>
-        </div>
-      </main>
-      <footer class="footer">
-        <h4>Vannila JavaScript Stopwatch</h4>
-      </footer>
+      <div class="buttons">
+        <button id="button-start">Start</button>
+        <button id="button-stop">Stop</button>
+        <button id="button-reset">Reset</button>
+      </div>
     </div>
+
     <script src="index.js"></script>
   </body>
 </html>
