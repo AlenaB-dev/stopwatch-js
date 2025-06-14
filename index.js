@@ -1,66 +1,33 @@
-let miliseconds = 0;
-const interval = 10;
+const display = document.getElementById("display");
+let startTime, interval;
 
-const onesPlaceMilisec = document.querySelector(".onesPlaceMiliSeconds");
-const tensPlaceMilisec = document.querySelector(".tensPlaceMiliSeconds");
-const hundredsPlaceMilisec = document.querySelector(
-  ".hundredsPlaceMiliseconds"
-);
-const onesPlaceSec = document.querySelector(".onesPlaceSeconds");
-const tensPlaceSec = document.querySelector(".tensPlaceSeconds");
-const onesPlaceMin = document.querySelector(".onesPlaceMinutes");
-const tensPlaceMin = document.querySelector(".tensPlaceMinutes");
-const onesPlaceHours = document.querySelector(".onesPlaceHours");
-const tensPlaceHours = document.querySelector(".tensPlaceHours");
-
-let timer;
+function formatTime(ms) {
+  const date = new Date(ms);
+  const h = String(date.getUTCHours()).padStart(2, "0");
+  const m = String(date.getUTCMinutes()).padStart(2, "0");
+  const s = String(date.getUTCSeconds()).padStart(2, "0");
+  const msStr = String(date.getUTCMilliseconds()).padStart(3, "0");
+  return `${h}:${m}:${s}.${msStr}`;
+}
 
 function startStopwatch() {
-  timer = setInterval(() => {
-    miliseconds += interval;
+  const offset = Date.now() - (startTime || 0);
+  startTime = Date.now() - offset;
 
-    let ms = miliseconds % 1000;
-    let hundreds = Math.floor(ms / 100);
-    let tens = Math.floor((ms % 100) / 10);
-    let ones = ms % 10;
-    let seconds = Math.floor(miliseconds / 1000) % 60;
-    let secTens = Math.floor(seconds / 10);
-    let secOnes = seconds % 10;
-    let minutes = Math.floor(miliseconds / 1000 / 60) % 60;
-    let minTens = Math.floor(minutes / 10);
-    let minOnes = minutes % 10;
-    let hours = Math.floor(miliseconds / 1000 / 60 / 60);
-    let hourTens = Math.floor(hours / 10);
-    let hourOnes = hours % 10;
-
-    onesPlaceMilisec.style.transform = `translateY(-${ones * 40}px)`;
-    tensPlaceMilisec.style.transform = `translateY(-${tens * 40}px)`;
-    hundredsPlaceMilisec.style.transform = `translateY(-${hundreds * 40}px)`;
-    onesPlaceSec.style.transform = `translateY(-${secOnes * 40}px)`;
-    tensPlaceSec.style.transform = `translateY(-${secTens * 40}px)`;
-    onesPlaceMin.style.transform = `translateY(-${minOnes * 40}px)`;
-    tensPlaceMin.style.transform = `translateY(-${minTens * 40}px)`;
-    onesPlaceHours.style.transform = `translateY(-${hourOnes * 40}px)`;
-    tensPlaceHours.style.transform = `translateY(-${hourTens * 40}px)`;
-  }, interval);
+  interval = setInterval(() => {
+    const elapsed = Date.now() - startTime;
+    display.textContent = formatTime(elapsed);
+  }, 10);
 }
 
 function stopStopwatch() {
-  clearInterval(timer);
+  clearInterval(interval);
 }
 
 function resetStopwatch() {
-  clearInterval(timer);
-  miliseconds = 0;
-  onesPlaceMilisec.style.transform = `translateY(0px)`;
-  tensPlaceMilisec.style.transform = `translateY(0px)`;
-  hundredsPlaceMilisec.style.transform = `translateY(0px)`;
-  onesPlaceSec.style.transform = `translateY(0px)`;
-  tensPlaceSec.style.transform = `translateY(0px)`;
-  onesPlaceMin.style.transform = `translateY(0px)`;
-  tensPlaceMin.style.transform = `translateY(0px)`;
-  onesPlaceHours.style.transform = `translateY(0px)`;
-  tensPlaceHours.style.transform = `translateY(0px)`;
+  clearInterval(interval);
+  startTime = 0;
+  display.textContent = "00:00:00.000";
 }
 
 document
