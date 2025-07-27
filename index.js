@@ -1,5 +1,6 @@
 const display = document.getElementById("display");
-let startTime, interval;
+let startTime = 0;
+let interval = null;
 
 function formatTime(ms) {
   const h = String(Math.floor(ms / 3600000)).padStart(2, "0");
@@ -12,7 +13,7 @@ function formatTime(ms) {
 function startStopwatch() {
   if (interval) return; // чтобы не создавать лишние setInterval
 
-  const offset = Date.now() - (startTime || Date.now());
+  const offset = Date.now() - startTime;
   startTime = Date.now() - offset;
 
   interval = setInterval(() => {
@@ -23,10 +24,12 @@ function startStopwatch() {
 
 function stopStopwatch() {
   clearInterval(interval);
+  interval = null;
 }
 
 function resetStopwatch() {
   clearInterval(interval);
+  interval = null;
   startTime = 0;
   display.textContent = "00:00:00.000";
 }
