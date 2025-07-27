@@ -26,20 +26,15 @@ body {
 .display {
   display: inline-block;
   text-align: center;
-  width: 11ch;
-  font-family: "digital", monospace;
+  width: 12ch;
+  font-family: "VT323", monospace;
+  font-variant-numeric: tabular-nums;
   font-size: 3em;
   background-color: #000;
   color: #0f0;
   padding: 20px 40px;
   border-radius: 10px;
-  letter-spacing: 2px;
   margin-bottom: 30px;
-}
-
-@font-face {
-  font-family: "digital";
-  src: url("fonts/DS-DIGIB.woff");
 }
 
 .buttons {
