@@ -2,16 +2,17 @@ const display = document.getElementById("display");
 let startTime, interval;
 
 function formatTime(ms) {
-  const date = new Date(ms);
-  const h = String(date.getUTCHours()).padStart(2, "0");
-  const m = String(date.getUTCMinutes()).padStart(2, "0");
-  const s = String(date.getUTCSeconds()).padStart(2, "0");
-  const msStr = String(date.getUTCMilliseconds()).padStart(3, "0");
+  const h = String(Math.floor(ms / 3600000)).padStart(2, "0");
+  const m = String(Math.floor((ms % 3600000) / 60000)).padStart(2, "0");
+  const s = String(Math.floor((ms % 60000) / 1000)).padStart(2, "0");
+  const msStr = String(ms % 1000).padStart(3, "0");
   return `${h}:${m}:${s}.${msStr}`;
 }
 
 function startStopwatch() {
-  const offset = Date.now() - (startTime || 0);
+  if (interval) return; // чтобы не создавать лишние setInterval
+
+  const offset = Date.now() - (startTime || Date.now());
   startTime = Date.now() - offset;
 
   interval = setInterval(() => {
